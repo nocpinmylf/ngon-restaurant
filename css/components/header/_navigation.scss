@@ -1,0 +1,111 @@
+#header {
+  @include flex(column, center, null);
+  height: 100vh;
+}
+
+.header-nav {
+  @include trans(.2s);
+  position: fixed;
+  background-color: transparent;
+  padding: 10px .6rem 0; 
+  width: 100%;
+  z-index: 10;
+
+  &-list {
+    @include flex(row, center, center);
+    @include breakpoint(tablet) {
+      @include flex(column, center, center);
+      position: relative;
+      height: auto;
+      order: 2;
+  
+      &, li {
+        width: 100%;
+      }
+    }
+  
+    a {
+      display: block;
+      padding: 10px 25px;
+      color: $color3;
+      font-size: $font-size;
+      font-weight: 900;
+      text-transform: uppercase;
+      text-align: center;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &.show {
+    background-color: $color1-blur;
+  }
+
+  &>.wrap {
+    @include flex(row, center, space-between);
+    margin-bottom: 10px;
+  }
+
+    // nav list and search
+  .nav {
+    @include flex(row, center, space-between);
+    z-index: 100;
+
+    .search-icon {
+      color: $color3;
+      margin: auto 10px;
+      cursor: pointer;
+
+      &.hide {
+        display: none;
+      }
+
+      @include breakpoint(tablet) {
+        svg {
+          display: table;
+          margin: 0 auto 1rem;
+        }
+      }
+    }
+  }
+
+    // responsive
+  @include breakpoint(tablet) {
+    background-color: transparent;
+    padding: 0;
+    background-color: $color1;
+
+    &>.wrap {
+      @include flex(column, center, space-between);
+    }
+
+    .logo {
+      width: 100%;
+
+      &>* {
+        transform: scale(.8);
+      }
+    }
+
+    .nav {
+      @include flex(column, center, center);
+      @include trans(.2s);
+      width: 100%;
+      opacity: 1;
+
+      &.hide {
+        @include trans(.2s);
+        display: none;
+        overflow: hidden;
+        opacity: 0;
+  
+        * {
+          display: none;
+        }
+      }
+    }
+  }
+}
+

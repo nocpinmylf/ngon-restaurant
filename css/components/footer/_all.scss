@@ -1,0 +1,58 @@
+@import "social";
+
+#footer {
+  margin-top: 3rem;
+  border-top: 5px dotted rgba(202, 176, 173, 0.726);
+
+  .title {
+    margin: 2rem auto;
+    font-size: 2rem;
+    text-align: center;
+    color: $color1-blur;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+
+  .row {
+    @include flex(row, null, null);
+
+    .col-50 {
+      width: 50%; 
+    }
+  }
+
+  @include breakpoint(tablet) {
+    .row {
+      @include flex(column, null, center);
+  
+      .col-50 {
+        width: 100%; 
+      }
+    }
+  }
+}
+
+#copyright {
+  text-align: center;
+}
+
+.footer-nav {
+  @include flex (row, null, space-around);
+  padding: 1rem;
+  margin: 1rem;
+
+  a {
+    font-size: $font-size * 1.5;
+    color: $color2-blur;
+
+    &:hover {
+      color: $color1;
+    }
+  }
+
+  @include breakpoint(small) {
+    a {
+      font-size: $font-size + 2;
+    }
+  }
+}

@@ -1,0 +1,36 @@
+.info {
+  @include flex(row, center, space-around);
+  flex-wrap: wrap;
+  margin: 5rem auto;
+  border-top: 5px dotted $color2-blur;
+  border-bottom: 5px dotted $color2-blur;
+
+  &-item {
+    @include flex(column, center, center);
+    @include size(300px, 300px);
+    overflow: hidden;
+    margin: 1.5rem;
+  
+    &-img {
+      @include size(300px, 300px);
+      margin-bottom: 15px;
+      object-fit: cover;
+      border-radius: 50%;
+      transition: .2s;
+
+      &:hover {
+        border-radius: 30%;
+      }
+    }
+
+    &-description {
+      font-size: 1rem;
+      color: $color2-blur;
+    }
+  }
+
+  @include breakpoint(tablet) {
+    margin: 0;
+    padding: 1rem 0;
+  }
+}

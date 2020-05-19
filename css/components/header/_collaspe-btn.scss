@@ -1,0 +1,30 @@
+#collaspe-btn{
+  @include size(30px, 30px);
+  display: none;
+  transition: all 0.3s ease-in-out;
+
+  &.active {
+  transform: rotate(90deg) scale(.8);
+
+  }
+
+  .line {
+    @include size(28px, 5px);
+    background-color: $color3;
+    display: block;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+
+    &:nth-child(1) {
+      width: 24px;
+    }
+
+    &:nth-child(2) {
+      width: 26px;
+    }
+  }
+
+  @include breakpoint(tablet) {
+    display: block;
+  }
+}

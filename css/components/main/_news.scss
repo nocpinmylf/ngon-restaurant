@@ -1,0 +1,74 @@
+.news {
+  min-height: 90vh;
+  margin-bottom: 5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 25px;
+  grid-template-areas:  "bigNews bigNews bigNews news6"
+                        "bigNews bigNews bigNews news5"
+                        "news1 news2 news3 news4";
+
+  &>* {
+    @include flex(column, flex-end, flex-end);
+  }
+
+  &-link {
+    @include size(100%, 3.3em);
+    display: block;
+    padding: 5px;
+    color: $color3;
+    background-color: $color2-blur2;
+  }
+
+  &-title {
+    @include textHide;
+  }
+
+  &-big { 
+    grid-area: bigNews;
+    background: url(../res/img/news1.jpg) no-repeat center/ cover;
+  }
+
+  &-1 { 
+    grid-area: news1; 
+    background: url(../res/img/news2.jpg) no-repeat center/ cover;
+  }
+
+  &-2 {
+    grid-area: news2;
+    background: url(../res/img/news3.jpg) no-repeat center/ cover;
+  }
+
+  &-3 { 
+    grid-area: news3; 
+    background: url(../res/img/news4.jpg) no-repeat center/ cover;
+  }
+
+  &-4 { 
+    grid-area: news4;
+    background: url(../res/img/news5.jpg) no-repeat center/ cover;
+  }
+
+  &-5 { 
+    grid-area: news5;
+    background: url(../res/img/news6.jpg) no-repeat center/ cover;
+  }
+
+  &-6 { 
+    grid-area: news6;
+    background: url(../res/img/news7.jpg) no-repeat center/ cover;
+  }
+
+  @include breakpoint(tablet) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: "bigNews" "news1" "news2" "news3" "news4" "news5" "news6";
+    padding: 1rem 15px;
+
+    &>* {
+      @include size(100%, 300px);
+    }
+  }
+}
+

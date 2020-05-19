@@ -1,0 +1,43 @@
+.search-form {
+  margin-left: 10px;
+  order: 1;
+  position: relative;
+
+  &.hide {
+    display: none;
+  }
+
+  .fa-search {
+    color: $color3;
+    position: absolute;
+    top: 8px;
+    left: 8px;
+  }
+
+  @include breakpoint(tablet) {
+    display: block;
+    margin: 0 auto 1rem;
+    width: 50%;
+  }
+}
+
+#search-txt {
+  border: 0;
+  color: $color3;
+  background-color: transparent;
+  padding: 5px 5px 5px 30px;
+  border-bottom: 1px solid $color1-blur;
+
+  &:focus {
+    border-bottom: 2px solid $color1;
+  }
+
+  @include breakpoint(tablet) {
+    border-bottom: 1px solid $color3;
+    width: 100%;
+
+    &:focus {
+      border-bottom: 2px solid $color3;
+    }
+  }
+}

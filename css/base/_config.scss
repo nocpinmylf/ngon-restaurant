@@ -1,0 +1,46 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font;
+  overflow-x: hidden;
+  font-size: $font-size;
+  line-height: 1.4;
+  color: $color2-blur;
+  background-color: $color3;
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $color2-blur;
+    border: 1px solid transparent;
+    border-radius: 5px;
+  }
+
+  &::-webkit-scrollbar,
+  &::-webkit-scrollbar-track {
+    background-color: $color3-blur;
+  }
+
+  &::-webkit-scrollbar {
+    scrollbar-width: thin;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+input {
+  &:focus {
+    outline: 0;
+  }
+}
+
+.wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  @include breakpoint(tablet) {
+    max-width: 100%;
+  }
+}
